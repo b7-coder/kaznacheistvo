@@ -7,6 +7,7 @@ def index(request):
     return render(request, 'kaznacheistvo_site/main.html')
 
 
+
 def news(request):
 
     rows = News.objects.all()
@@ -17,6 +18,7 @@ def news(request):
 
     return render(request, 'kaznacheistvo_site/news.html', context)
 
+
 def newsDetails(request, id):
 
     mainNews = News.objects.get(id=id) # новость
@@ -25,8 +27,9 @@ def newsDetails(request, id):
     images = NewsImages.objects.all().filter(newsObject__id=id) # множество картинок новостя
 
     context = {
+        'mainNews': mainNews,
         'images':images,
-        'details': details
+        'details': details,
     }
 
-    return render(request, '', context)
+    return render(request, 'kaznacheistvo_site/newsDetails.html', context)
