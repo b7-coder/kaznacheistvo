@@ -1,0 +1,36 @@
+
+<html>
+    <head>
+      <title>Chat with GPT-3</title>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+      <h1>Chat with GPT-3</h1>
+      <form id="chat-form">
+        {% csrf_token %}
+        <label for="question">Ask a question:</label>
+        <input type="text" id="question" name="question">
+        <button type="submit">Ask</button>
+      </form>
+      <label id="answer"></label>
+
+
+      {%for item in rows%}
+        <a>
+          сюда пишите
+        </a>
+      {% endfor %}
+
+      <script>
+        // Отправляем запрос на сервер, когда пользователь отправляет форму
+        $("#chat-form").submit(function(event) {
+          event.preventDefault();
+          $.post("/chat/", $(this).serialize(), function(data) {
+            $("#answer").text(data.answer);
+            var label = document.getElementById("answer")
+            label.innerHTML = data.answer
+          });
+        });
+      </script>
+    </body>
+  </html>

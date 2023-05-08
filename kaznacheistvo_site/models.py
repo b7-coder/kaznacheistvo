@@ -20,3 +20,16 @@ class NewsImages(models.Model):
     newsObject = models.ForeignKey(News, on_delete=models.CASCADE)
     description = models.CharField(max_length=256)
     image = models.ImageField(null=True)
+
+
+class Answer(models.Model):
+    answer = models.TextField(null=True)
+    questions = models.TextField()
+
+    def __str__(self):
+        return self.questions
+
+class AllAnswer(models.Model):
+    parrent = models.ForeignKey(Answer, on_delete=models.CASCADE, related_name='qwerty', null=True)
+    child = models.ForeignKey(Answer, on_delete=models.CASCADE, related_name='qwertyy', null=True)
+

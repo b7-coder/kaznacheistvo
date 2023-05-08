@@ -9,6 +9,8 @@ urlpatterns = [
     path('', index, name='main'),
     path('news/', news, name='news'),
     path('newsDetails/<int:id>', newsDetails, name='newsDetails'),
+    path('support/', supportPage, name='support'),
+    path('chat/', chat, name='chat'),
 ]
 
 
