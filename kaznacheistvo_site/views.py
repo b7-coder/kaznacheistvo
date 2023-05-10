@@ -3,8 +3,14 @@ from .models import *
 # Create your views here.
 
 def index(request):
-    print('test')
-    return render(request, 'kaznacheistvo_site/main.html')
+    
+    lastNews = News.objects.all()[::-1][0:5]
+
+    context = {
+        'lastNews':lastNews
+    }
+
+    return render(request, 'kaznacheistvo_site/main.html',context)
 
 def news(request):
 
@@ -49,7 +55,6 @@ def supportPage(request):
 
     return render(request, "kaznacheistvo_site/support.html", context)
 
-
 import openai
 from django.http import JsonResponse
 
@@ -83,3 +88,31 @@ def chat(request):
     # Если запрос не является POST-запросом, отображаем форму
     else:
         return render(request, "chat.html")
+
+def questionsDetails(request, id):
+    # функция для отображения детей вопросов
+
+    question = Answer.objects.get(id=id)
+    # запрос на вытягивание родителя
+
+    rows = AllAnswer.objects.all().filter(parrent__id=id)
+    # запрос на вытягивание детей
+    
+    context = {
+        'question' : question,
+        'questions' : rows
+    }
+    # через контекст отправляем данные
+
+    return render(request, "kaznacheistvo_site/question.html", context)
+    # возвращаем результат функции render()
+    # первый аргумент запрос(request)
+    # второй аргумент страница(html файл)
+    # третий аргумент данные для html страницы
+
+
+def about(request):
+    return render(request, "")
+
+def laws(request):
+    return render(request, "")

@@ -15,10 +15,13 @@
       <label id="answer"></label>
 
 
-      {%for item in rows%}
-        <a>
-          сюда пишите
+      <br/>
+      <h1>Вопросы</h1>
+      {% for item in rows %}
+        <a href="{% url 'question' item.id %}">
+          {{item.questions}}
         </a>
+        <br/>
       {% endfor %}
 
       <script>

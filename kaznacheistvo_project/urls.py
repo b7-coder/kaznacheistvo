@@ -11,6 +11,8 @@ urlpatterns = [
     path('newsDetails/<int:id>', newsDetails, name='newsDetails'),
     path('support/', supportPage, name='support'),
     path('chat/', chat, name='chat'),
+    path('question/<int:id>', questionsDetails, name='question'),
+
 ]
 
 
