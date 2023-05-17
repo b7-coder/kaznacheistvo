@@ -49,6 +49,20 @@
     
  </head>
  <body>
+
+    <h1>Казначейство Оша</h1>
+    <div class="header">
+        
+    </div>
+    <ul>
+        <li><a class="active" href="{% url 'main'%}">Главная</a></li>
+        <li><a href="{% url 'news' %}">Новости</a></li>
+        <li><a href="{% url 'laws' %}">Законы</a></li>
+        <li><a href="{% url 'support' %}">Поддержка</a></li>
+        <li><a href="{% url 'about' %}">О Нас</a></li>
+    
+    </ul>
+
     {% block content %}
     {% endblock %}
  </body>

@@ -112,7 +112,7 @@ def questionsDetails(request, id):
 
 
 def about(request):
-    return render(request, "")
+    return render(request, "kaznacheistvo_site/about.html")
 
 def laws(request):
-    return render(request, "")
+    return render(request, "kaznacheistvo_site/laws.html")
