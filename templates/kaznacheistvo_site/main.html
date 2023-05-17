@@ -1,13 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <a href="{% url 'news' %}">Новости</a>
-    <a href="{% url 'support' %}">Поддержка</a>
-</body>
-</html>
+{% extends 'baseElements.html' %}
+{% load static %}
+{% block content %}
+<h1>Казначейство Оша</h1>
+<div class="header">
+    
+</div>
+<ul>
+    <li><a class="active" href="#homepage">Главная</a></li>
+    <li><a href="#news">Новости</a></li>
+    <li><a href="#laws">Законы</a></li>
+    <li><a href="#support">Поддержка</a></li>
+    <li><a href="#about">О Нас</a></li>
+
+</ul>
+{% endblock %}
+
+  
