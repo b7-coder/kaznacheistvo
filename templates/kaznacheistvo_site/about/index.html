@@ -1,0 +1,134 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Unearth &mdash; Website Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,700|Oswald:400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'about/fonts/icomoon/style.css'%}">
+
+    <link rel="stylesheet" href="{% static 'about/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'about/css/jquery.fancybox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'about/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'about/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'about/fonts/flaticon/font/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'about/css/aos.css' %}">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{% static 'about/css/style.css'%}">
+    
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  
+  <div class="site-wrap"  id="home-section">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+   
+
+      
+    <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+
+      {% include 'kaznacheistvo_site/baseheader.html' %}
+      
+    </header>
+    
+    <div class="owl-carousel slide-one-item">
+      <div class="site-section-cover overlay img-bg-section" style="background-image: url('../about/images/hero_3.jpg'); " >
+        <img src="{% static 'about/images/hero_3.jpg'%}"/>
+        <div class="container">
+        
+          <div class="row align-items-center justify-content-center text-center">
+            <div class="col-md-12 col-lg-7">
+              <h1 data-aos="fade-up" data-aos-delay="">Welcome to UnEarth</h1>  
+              <p class="mb-5" data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, cumque vitae animi.</p>
+              <p data-aos="fade-up" data-aos-delay="200"><a href="#" class="btn btn-outline-white border-w-2 btn-md">Get in touch</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-section-cover overlay img-bg-section" style="background-image: url('images/hero_2.jpg'); " >
+        <img src="{% static 'about/images/hero_2.jpg'%}"/>
+        <div class="container">
+          <div class="row align-items-center justify-content-center text-center">
+            <div class="col-md-12 col-lg-8">
+              <h1 data-aos="fade-up" data-aos-delay="">New Generation of Mining</h1>      
+              <p class="mb-5" data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est odit dolorum voluptates!</p>
+              <p data-aos="fade-up" data-aos-delay="200"><a href="#" class="btn btn-outline-white border-w-2 btn-md">Get in touch</a></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+
+    </div>
+    
+
+    <div class="site-section" id="team-section">
+      <div class="container">
+        <div class="row mb-5 justify-content-center">
+          <div class="col-md-7 text-center">
+            <div class="block-heading-1" data-aos="fade-up" data-aos-delay="">
+              <h2>Our Team</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere at delectus laudantium, deserunt, atque eveniet. Voluptatem, fuga quos rerum inventore.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          {% for item in rows %}
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <div class="block-team-member-1 text-center rounded">
+              <figure>
+                <img src="{{item.image.url}}" alt="Image" class="img-fluid rounded-circle">
+              </figure>
+              <h3 class="font-size-20 text-black">{{item.fullname}}</h3>
+              <span class="d-block font-gray-5 letter-spacing-1 text-uppercase font-size-12 mb-3">{{item.description}}</span>
+              <div class="block-social-1">
+                <a href="{{item.facebook}}" class="btn border-w-2 rounded primary-primary-outline--hover"><span class="icon-facebook"></span></a>
+                <a href="{{item.twiter}}" class="btn border-w-2 rounded primary-primary-outline--hover"><span class="icon-twitter"></span></a>
+                <a href="{{item.instagram}}" class="btn border-w-2 rounded primary-primary-outline--hover"><span class="icon-instagram"></span></a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <script src="{% static 'about/js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'about/js/popper.min.js' %}"></script>
+  <script src="{% static 'about/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'about/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'about/js/jquery.sticky.js' %}"></script>
+  <script src="{% static 'about/js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'about/js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'about/js/jquery.fancybox.min.js' %}"></script>
+  <script src="{% static 'about/js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'about/js/aos.js' %}"></script>
+  
+  <script src="{% static 'about/js/main.js' %}"></script>
+    
+  </body>
+</html>

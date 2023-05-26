@@ -1,0 +1,51 @@
+<style>
+    body {
+      font-size: 28px;
+    }
+  
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+      position: -webkit-sticky; /* Safari */
+      position: sticky;
+      top: 0;
+    }
+  
+    li {
+      float: left;
+      border-right: 1px solid #bbb;
+      border-right: none;
+    }
+  
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+  
+    li a:hover {
+      background-color: #111;
+    }
+  
+  
+    .active {
+      background-color: #4CAF50;
+      
+    }
+</style>
+
+<h1>Казначейство Оша</h1>
+    
+<ul>
+    <li><a class="active" href="{% url 'main'%}">Главная</a></li>
+    <li><a href="{% url 'news' %}">Новости</a></li>
+    <li><a href="{% url 'laws' %}">Законы</a></li>
+    <li><a href="{% url 'support' %}">Поддержка</a></li>
+    <li><a href="{% url 'about' %}">О Нас</a></li>
+
+</ul>

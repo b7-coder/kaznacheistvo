@@ -33,3 +33,13 @@ class AllAnswer(models.Model):
     parrent = models.ForeignKey(Answer, on_delete=models.CASCADE, related_name='qwerty', null=True)
     child = models.ForeignKey(Answer, on_delete=models.CASCADE, related_name='qwertyy', null=True)
 
+class OurTeam(models.Model):
+    fullname = models.CharField(max_length=250)
+    image = models.ImageField()
+    description = models.TextField()
+    instagram = models.CharField(max_length=250)
+    facebook = models.CharField(max_length=250)
+    twiter = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.fullname

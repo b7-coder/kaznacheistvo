@@ -20,7 +20,7 @@ def news(request):
         'news': rows
     }
 
-    return render(request, 'kaznacheistvo_site/news.html', context)
+    return render(request, 'kaznacheistvo_site/news/index.html', context)
 
 def newsDetails(request, id):
 
@@ -112,7 +112,14 @@ def questionsDetails(request, id):
 
 
 def about(request):
-    return render(request, "kaznacheistvo_site/about.html")
+
+    rows = OurTeam.objects.all()
+
+    context = {
+        'rows': rows
+    }
+
+    return render(request, "kaznacheistvo_site/about/index.html",context)
 
 def laws(request):
     return render(request, "kaznacheistvo_site/laws.html")
